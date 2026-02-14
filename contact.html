@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact | The Light Photo</title>
+  <style>
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:#111;color:#fff}
+    a{color:inherit}
+    .wrap{max-width:920px;margin:0 auto;padding:40px 20px}
+    .card{border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:18px;margin:14px 0}
+    .muted{color:#cfcfcf}
+    .row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    code{padding:.2em .45em;border:1px solid rgba(255,255,255,.18);border-radius:10px}
+    .btn{display:inline-block;padding:12px 16px;border:1px solid #fff;background:transparent;color:#fff;text-decoration:none;cursor:pointer}
+    img{max-width:260px;width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.18);margin-top:10px}
+    .toast{margin-top:10px;font-size:14px;color:#cfcfcf;min-height:20px}
+    ol{margin:8px 0 0 18px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>문의하기</h1>
+    <p class="muted">가장 빠른 상담은 카카오톡 친구추가 후 메시지로 부탁드려요.</p>
+
+    <section class="card">
+      <h2>카카오톡</h2>
+
+      <p class="muted">친구추가 방법</p>
+      <ol class="muted">
+        <li>카카오톡 실행 → 친구 탭</li>
+        <li>오른쪽 위 “친구 추가”</li>
+        <li>“ID로 추가”에서 아래 ID 입력</li>
+      </ol>
+
+      <div class="row" style="margin-top:10px">
+        <div>카카오톡 ID: <code id="kakaoId">TheLightPhoto</code></div>
+        <button class="btn" id="copyBtn" type="button">ID 복사</button>
+      </div>
+
+      <img src="/assets/kakao-qr.png" alt="카카오톡 QR 코드" />
+      <div class="toast" id="toast"></div>
+
+      <p class="muted" style="margin-top:12px">
+        답장: 평균 1~3시간 내 (예식 촬영 중엔 늦을 수 있어요)
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>인스타그램</h2>
+      <p class="muted">최근 촬영 사진과 예식 스냅 분위기를 인스타그램에서 확인하실 수 있어요.</p>
+      <div class="row" style="margin-top:10px">
+        <a class="btn" href="https://instagram.com/thelightphoto_official" target="_blank" rel="noreferrer">
+          인스타그램 방문하기
+        </a>
+        <a class="btn" href="https://ig.me/m/thelightphoto_official" target="_blank" rel="noreferrer">
+          DM 보내기
+        </a>
+      </div>
+      <p class="muted" style="margin-top:10px">프로필 방문 후 DM으로 문의 주셔도 좋아요.</p>
+    </section>
+
+    <p style="margin-top:20px"><a href="/">메인으로 돌아가기</a></p>
+  </div>
+
+  <script>
+    const kakaoId = document.getElementById('kakaoId').textContent.trim();
+    const toast = document.getElementById('toast');
+    document.getElementById('copyBtn').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(kakaoId);
+        toast.textContent = '복사됐어요. 카카오톡에서 ID로 친구추가 해주세요.';
+      } catch (e) {
+        toast.textContent = '복사가 안 되면 ID를 길게 눌러 복사해 주세요.';
+      }
+      setTimeout(() => { toast.textContent = ''; }, 2500);
+    });
+  </script>
+</body>
+</html>
