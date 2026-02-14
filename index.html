@@ -1,45 +1,69 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>The Light Photo</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 100px 20px;
-    }
-    h1 {
-      font-size: 48px;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-    p {
-      font-size: 18px;
-      color: #ccc;
-    }
-    .btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 12px 24px;
-      border: 1px solid #fff;
-      color: #fff;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      background: #fff;
-      color: #111;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Light Photo | Wedding Snap</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
-  <h1>THE LIGHT PHOTO</h1>
-  <p>빛으로 순간을 기록합니다.</p>
-  <a href="/contact.html" class="btn">Contact</a>
+  <div class="container">
+    <header class="header">
+      <div class="brand">THE LIGHT PHOTO</div>
+      <nav class="nav">
+        <a href="/" aria-current="page">Home</a>
+        <a href="/portfolio/">Portfolio</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>예식의 흐름을 자연스럽게 기록합니다.</h1>
+      <p>
+        연출보다 순간에 집중하는 웨딩 예식 스냅.
+        가장 중요한 장면을 놓치지 않게, 차분하고 정직하게 담아드립니다.
+      </p>
+
+      <div class="btns">
+        <a class="btn primary" href="/contact/">카카오톡 문의하기</a>
+        <a class="btn" href="https://instagram.com/thelightphoto_official" target="_blank" rel="noreferrer">
+          인스타그램 보기
+        </a>
+      </div>
+    </section>
+
+    <div class="hr"></div>
+
+    <section class="card">
+      <h2 style="margin:0 0 8px">촬영 스타일</h2>
+      <p class="muted" style="margin:0">
+        과하지 않은 색감, 자연스러운 표정, 예식의 흐름을 방해하지 않는 촬영.
+        하이라이트만이 아닌 하루 전체의 감정을 기록합니다.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 style="margin:0 0 8px">진행 과정</h2>
+      <p class="muted" style="margin:0">
+        문의 → 일정/장소 확인 → 촬영 → 셀렉/보정 → 전달
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 style="margin:0 0 8px">Portfolio</h2>
+      <p class="muted" style="margin:0 0 12px">
+        대표 컷은 포트폴리오 페이지에서 확인하실 수 있습니다.
+      </p>
+      <a class="btn" href="/portfolio/">포트폴리오 보기</a>
+    </section>
+
+    <footer class="footer">
+      © <span id="year"></span> The Light Photo
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
