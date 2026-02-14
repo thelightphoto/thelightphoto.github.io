@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio | The Light Photo</title>
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">THE LIGHT PHOTO</div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/portfolio/" aria-current="page">Portfolio</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero" style="padding-top:34px">
+      <h1>Portfolio</h1>
+      <p class="muted">대표 예식 스냅 모음입니다. 사진 업로드만 하면 자동으로 반영되도록 구성합니다.</p>
+    </section>
+
+    <!-- JS가 여기에 사진을 자동으로 채울 예정 -->
+    <section class="grid" id="gallery"></section>
+
+    <footer class="footer">© <span id="y"></span> The Light Photo</footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
